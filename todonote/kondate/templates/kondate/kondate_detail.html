@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}{{object.title }}{% endblock %}
+{% block h2 %}メニュー詳細{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h5 class="card-header">{{ object.category }}</h5>
+        <div class="card-body">
+            <h6 class="card-title">朝食</h6>
+            <p class="card-text">{{ object.breakfast }}</p>
+            <h6 class="card-title">昼食</h6>
+            <p class="card-text">{{ object.lunch }}</p>
+            <h6 class="card-title">夕食</h6>
+            <p class="card-text">{{ object.dinner }}</p>
+            <h6 class="card-title">間食</h6>
+            <p class="card-text">{{ object.snacking }}</p>
+            <h6 class="card-title">食事日</h6>
+            <p class="card-text">{{ object.eatday }}</p>
+            <a href="{% url 'list-kondate' %}" class="btn btn-primary">一覧</a>
+            <a href="{% url 'update-kondate' object.pk %}" class="btn btn-primary">編集</a>
+            <a href="{% url 'delete-kondate' object.pk %}" class="btn btn-primary">削除</a>
+        </div>
+    </div>
+{% endblock content %}
